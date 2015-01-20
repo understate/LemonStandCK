@@ -37,6 +37,34 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func purchaseLemonPlusButtonPressed(sender: UIButton) {
+    }
+    
+    
+    @IBAction func purchaseLemonMinusButtonPressed(sender: UIButton) {
+    }
+    
+    @IBAction func purchaseIceCubesPlusButtonPressed(sender: UIButton) {
+    }
+    
+    @IBAction func purchaseIceCubesMinusButtonPressed(sender: UIButton) {
+    }
+    
+    @IBAction func mixLemonPlusButtonPressed(sender: UIButton) {
+    }
+  
+    @IBAction func mixLemonMinusButtonPressed(sender: UIButton) {
+    }
+    
+    
+    @IBAction func mixIceCubesPlusButtonPressed(sender: UIButton) {
+    }
+    
+    @IBAction func mixIceCubesMinusButtonPressed(sender: UIButton) {
+    }
+    
+    @IBAction func startDayButtonPressed(sender: UIButton) {
+    }
 
 }
 
