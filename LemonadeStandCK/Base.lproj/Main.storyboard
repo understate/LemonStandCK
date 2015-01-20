@@ -102,7 +102,7 @@
                                     <rect key="frame" x="154" y="507" width="100" height="50"/>
                                 </variation>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOB-UN-DEC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€ Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOB-UN-DEC">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.63529413940000001" green="0.75686281919999998" blue="0.22352942819999999" alpha="1" colorSpace="deviceRGB"/>
@@ -326,6 +326,15 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="currentEuroLabel" destination="iOB-UN-DEC" id="0xL-aY-rgj"/>
+                        <outlet property="currentIceCubesLabel" destination="bsV-Mf-4L0" id="2Ac-zc-akz"/>
+                        <outlet property="currentLemonLabel" destination="Nbh-ha-QRi" id="VTC-6l-TWn"/>
+                        <outlet property="mixIceCubesLabel" destination="hZY-gt-EZh" id="Fzb-6d-Hrd"/>
+                        <outlet property="mixLemonsLabel" destination="iHn-nd-76p" id="M9E-C2-kg3"/>
+                        <outlet property="purchaseIceCubesLabel" destination="gjD-D7-mI7" id="KRR-71-Khj"/>
+                        <outlet property="purchaseLemonLabel" destination="8rM-r4-mTa" id="M1d-k7-Cql"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

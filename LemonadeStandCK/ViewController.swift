@@ -9,6 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var currentEuroLabel: UILabel!
+    
+    @IBOutlet weak var currentLemonLabel: UILabel!
+    
+    @IBOutlet weak var currentIceCubesLabel: UILabel!
+    
+    @IBOutlet weak var purchaseLemonLabel: UILabel!
+    
+    @IBOutlet weak var purchaseIceCubesLabel: UILabel!
+    
+    @IBOutlet weak var mixLemonsLabel: UILabel!
+    
+    @IBOutlet weak var mixIceCubesLabel: UILabel!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
