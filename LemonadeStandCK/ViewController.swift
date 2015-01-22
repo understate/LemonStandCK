@@ -187,15 +187,14 @@ class ViewController: UIViewController {
     
     
     @IBAction func startDayButtonPressed(sender: AnyObject) {
-        //Create a lemonade ratio before we need to convert thes ints of the labels to floats
-        var mixLemonsFloat = CGFloat(mixLemons)
-        var mixIceCubesFloat = CGFloat(mixIceCubes)
-        lemonadeRatio = mixLemonsFloat / mixIceCubesFloat
-        println(lemonadeRatio)
         
-        
-        
-        //reset labels
+        createLemonadeRatio()
+        resetLabelforNewDay()
+        randomNumberOfCustomers()
+    }
+
+    func resetLabelforNewDay () {
+        //reset labels for new day
         purchaseLemons = 0
         purchaseIceCubes = 0
         mixIceCubes = 0
@@ -204,10 +203,21 @@ class ViewController: UIViewController {
         purchaseLemonLabel.text = "\(purchaseLemons)"
         mixIceCubesLabel.text = "\(mixIceCubes)"
         mixLemonsLabel.text = "\(mixLemons)"
-        
-        
-        
     }
-
+    
+    func createLemonadeRatio () {
+        //Create a lemonade ratio before we need to convert thes ints of the labels to floats
+        var mixLemonsFloat = CGFloat(mixLemons)
+        var mixIceCubesFloat = CGFloat(mixIceCubes)
+        lemonadeRatio = mixLemonsFloat / mixIceCubesFloat
+        println(lemonadeRatio)
+    }
+    
+    func randomNumberOfCustomers () -> Int {
+        var randomNumberCustomers = Int(arc4random_uniform(UInt32(10))) + 1
+        println(randomNumberCustomers)
+        return randomNumberCustomers
+    }
+    
 }
 
