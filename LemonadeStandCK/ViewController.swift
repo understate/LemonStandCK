@@ -42,6 +42,10 @@ class ViewController: UIViewController {
     var mixLemons:Int = 0
     var mixIceCubes:Int  = 0
     
+    
+    //Start Day variables
+    var lemonadeRatio:CGFloat = 0
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -183,6 +187,25 @@ class ViewController: UIViewController {
     
     
     @IBAction func startDayButtonPressed(sender: AnyObject) {
+        //Create a lemonade ratio before we need to convert thes ints of the labels to floats
+        var mixLemonsFloat = CGFloat(mixLemons)
+        var mixIceCubesFloat = CGFloat(mixIceCubes)
+        lemonadeRatio = mixLemonsFloat / mixIceCubesFloat
+        println(lemonadeRatio)
+        
+        
+        
+        //reset labels
+        purchaseLemons = 0
+        purchaseIceCubes = 0
+        mixIceCubes = 0
+        mixLemons = 0
+        purchaseIceCubesLabel.text = "\(purchaseIceCubes)"
+        purchaseLemonLabel.text = "\(purchaseLemons)"
+        mixIceCubesLabel.text = "\(mixIceCubes)"
+        mixLemonsLabel.text = "\(mixLemons)"
+        
+        
         
     }
 
