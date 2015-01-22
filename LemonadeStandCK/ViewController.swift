@@ -118,26 +118,72 @@ class ViewController: UIViewController {
     
     
     @IBAction func mixLemonPlusButtonPressed(sender: AnyObject) {
+        if currentLemons > 0 {
+            ++mixLemons
+            --currentLemons
+            currentLemonLabel.text = "\(currentLemons) Lemons"
+            mixLemonsLabel.text = "\(mixLemons)"
+            
+        
+        }
+        else {
+            println("No more Lemons for mix. all used up.")
+        }
+        
     }
   
     
     
     @IBAction func mixLemonMinusButtonPressed(sender: AnyObject) {
+        if mixLemons > 0 {
+            --mixLemons
+            ++currentLemons
+            currentLemonLabel.text = "\(currentLemons) Lemons"
+            mixLemonsLabel.text = "\(mixLemons)"
+            
+        }
+        
+        else {
+            println("You cannot use less lemons then 0 for one mix")
+        }
     }
     
     
     
     @IBAction func mixIceCubesPlusButtonPressed(sender: AnyObject) {
+        if currentIceCubes > 0 {
+            --currentIceCubes
+            ++mixIceCubes
+            currentIceCubesLabel.text = "\(currentIceCubes) Ice Cubes"
+            mixIceCubesLabel.text = "\(mixIceCubes)"
+            
+        }
+        
+        else {
+            println("You already used up all available Ice Cubes")
+        }
     }
     
     
     
     @IBAction func mixIceCubesMinusButtonPressed(sender: AnyObject) {
+        if mixIceCubes > 0 {
+            --mixIceCubes
+            ++currentIceCubes
+            currentIceCubesLabel.text = "\(currentIceCubes) Ice Cubes"
+            mixIceCubesLabel.text = "\(mixIceCubes)"
+            
+        }
+        
+        else {
+            println("You cannout use less then 0 for one mix")
+        }
     }
     
     
     
     @IBAction func startDayButtonPressed(sender: AnyObject) {
+        
     }
 
 }
