@@ -13,6 +13,7 @@
 		430B157B1A6EED7A00D328B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 430B157A1A6EED7A00D328B1 /* Images.xcassets */; };
 		430B157E1A6EED7A00D328B1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 430B157C1A6EED7A00D328B1 /* LaunchScreen.xib */; };
 		430B158A1A6EED7A00D328B1 /* LemonadeStandCKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B15891A6EED7A00D328B1 /* LemonadeStandCKTests.swift */; };
+		43291C821A729F2300B23405 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43291C811A729F2300B23405 /* Customer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		430B15831A6EED7A00D328B1 /* LemonadeStandCKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LemonadeStandCKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		430B15881A6EED7A00D328B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		430B15891A6EED7A00D328B1 /* LemonadeStandCKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LemonadeStandCKTests.swift; sourceTree = "<group>"; };
+		43291C811A729F2300B23405 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				430B15731A6EED7A00D328B1 /* AppDelegate.swift */,
 				430B15751A6EED7A00D328B1 /* ViewController.swift */,
+				43291C811A729F2300B23405 /* Customer.swift */,
 				430B15771A6EED7A00D328B1 /* Main.storyboard */,
 				430B157A1A6EED7A00D328B1 /* Images.xcassets */,
 				430B157C1A6EED7A00D328B1 /* LaunchScreen.xib */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43291C821A729F2300B23405 /* Customer.swift in Sources */,
 				430B15761A6EED7A00D328B1 /* ViewController.swift in Sources */,
 				430B15741A6EED7A00D328B1 /* AppDelegate.swift in Sources */,
 			);
@@ -407,6 +411,7 @@
 				430B158F1A6EED7A00D328B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		430B15901A6EED7A00D328B1 /* Build configuration list for PBXNativeTarget "LemonadeStandCKTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +420,7 @@
 				430B15921A6EED7A00D328B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

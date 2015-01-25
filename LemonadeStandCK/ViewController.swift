@@ -45,6 +45,8 @@ class ViewController: UIViewController {
     
     //Start Day variables
     var lemonadeRatio:CGFloat = 0
+    var numberOfCustomers: Int = 0
+    var lemonadeRatioThisDay:CGFloat = 0
     
 
     override func viewDidLoad() {
@@ -187,14 +189,23 @@ class ViewController: UIViewController {
     
     
     @IBAction func startDayButtonPressed(sender: AnyObject) {
-        
         createLemonadeRatio()
+        numberOfCustomers = randomNumberOfCustomers()
+        println("Today you have \(numberOfCustomers) customers at your stand")
+        //createRandomTastePreference()
+        currentEuro = currentEuro + earningsForTheDay(numberOfCustomers)
+        currentEuroLabel.text = "\(currentEuro) €"
         resetLabelforNewDay()
-        randomNumberOfCustomers()
     }
 
+    
+    
+    ///////////
+    //This is the section for helpe functions
+    //////////
+    
+    //reset labels for new day
     func resetLabelforNewDay () {
-        //reset labels for new day
         purchaseLemons = 0
         purchaseIceCubes = 0
         mixIceCubes = 0
@@ -205,19 +216,88 @@ class ViewController: UIViewController {
         mixLemonsLabel.text = "\(mixLemons)"
     }
     
+    //Create a lemonade ratio before we need to convert these int's of the labels to floats
     func createLemonadeRatio () {
-        //Create a lemonade ratio before we need to convert thes ints of the labels to floats
         var mixLemonsFloat = CGFloat(mixLemons)
         var mixIceCubesFloat = CGFloat(mixIceCubes)
         lemonadeRatio = mixLemonsFloat / mixIceCubesFloat
-        println(lemonadeRatio)
+        if lemonadeRatio > 1 {
+            println("The lemonade ratio today \(lemonadeRatio) ACIDIC LEMONADE")
+        }
+        else if lemonadeRatio == 1 {
+            println("The lemonade ratio today \(lemonadeRatio) EQUAL PARTS LEMONADE")
+        }
+        
+        else {
+        println("The lemonade ratio today \(lemonadeRatio) DILUTED LEMONADE")
+        }
     }
     
+    //create a random number of customers
     func randomNumberOfCustomers () -> Int {
         var randomNumberCustomers = Int(arc4random_uniform(UInt32(10))) + 1
         println(randomNumberCustomers)
         return randomNumberCustomers
     }
+   
+    //create a taste preference
+    func createRandomTastePreference () -> Double {
+        let randomTastePreference = (Double(arc4random_uniform(UInt32(10))) + 1.0) / 10
+        
+        if randomTastePreference < 0.4 {
+            println("Taste preference for this customer is \(randomTastePreference) which is ACIDIC LEMONADE")
+        }
+        
+        else if randomTastePreference > 0.6 {
+            println("Taste preference for this customer is \(randomTastePreference) which is DILUTED LEMONADE")
+        }
+            
+        else {
+            println("Taste preference for this customer is \(randomTastePreference) which is EQUAL PARTS LEMONADE")
+        }
+        
+        
+        return randomTastePreference
+    }
+    
+    //compute earnings for the day
+    func earningsForTheDay (customersThisDay: Int) -> Int {
+        var earnings = 0
+        var customer = Customer()
+        println("Count of customers to compute earnings: \(customersThisDay)")
+        
+        for customer.index = 0; customer.index < customersThisDay; ++customer.index
+        {
+            customer.tastePreference = createRandomTastePreference()
+            println("I am customer \(customer.index + 1) my taste preference: \(customer.tastePreference) lemonade ratio is: \(lemonadeRatio)")
+            
+            if customer.tastePreference < 0.4 && lemonadeRatio > 1.0 {
+                ++earnings
+                println("PAID")
+            }
+            
+            else if customer.tastePreference > 0.6 && lemonadeRatio < 1.0 {
+                ++earnings
+                println("PAID")
+            }
+            
+            else if customer.tastePreference >= 0.4 && customer.tastePreference <= 0.6 && lemonadeRatio == 1.0 {
+                ++earnings
+                println("PAID")
+            }
+                
+            else {
+                println("NOT paid")
+            }
+        
+        }
+        
+        println("These are the final earnings for the day: EUR \(earnings)")
+        
+        return earnings
+    
+    }
+    
     
 }
 
