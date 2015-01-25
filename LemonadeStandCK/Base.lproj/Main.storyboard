@@ -290,6 +290,12 @@
                                     <rect key="frame" x="255" y="298" width="42" height="21"/>
                                 </variation>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="abP-ct-buP">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="53" y="66" width="60" height="60"/>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -320,6 +326,7 @@
                                 <exclude reference="YXk-vS-WbF"/>
                                 <exclude reference="dHs-72-3PV"/>
                                 <exclude reference="iHn-nd-76p"/>
+                                <exclude reference="abP-ct-buP"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -350,6 +357,7 @@
                                 <include reference="YXk-vS-WbF"/>
                                 <include reference="dHs-72-3PV"/>
                                 <include reference="iHn-nd-76p"/>
+                                <include reference="abP-ct-buP"/>
                             </mask>
                         </variation>
                     </view>
@@ -357,6 +365,7 @@
                         <outlet property="currentEuroLabel" destination="iOB-UN-DEC" id="0xL-aY-rgj"/>
                         <outlet property="currentIceCubesLabel" destination="bsV-Mf-4L0" id="2Ac-zc-akz"/>
                         <outlet property="currentLemonLabel" destination="Nbh-ha-QRi" id="VTC-6l-TWn"/>
+                        <outlet property="currentWeather" destination="abP-ct-buP" id="R5I-Vq-AgK"/>
                         <outlet property="mixIceCubesLabel" destination="hZY-gt-EZh" id="Fzb-6d-Hrd"/>
                         <outlet property="mixLemonsLabel" destination="iHn-nd-76p" id="M9E-C2-kg3"/>
                         <outlet property="purchaseIceCubesLabel" destination="gjD-D7-mI7" id="KRR-71-Khj"/>

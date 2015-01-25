@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mixIceCubesLabel: UILabel!
     
+    @IBOutlet weak var currentWeather: UIImageView!
     
     // Stats Label Varibales
     var currentEuro = 10
@@ -191,6 +192,7 @@ class ViewController: UIViewController {
     @IBAction func startDayButtonPressed(sender: AnyObject) {
         createLemonadeRatio()
         numberOfCustomers = randomNumberOfCustomers()
+        randomWeather()
         println("Today you have \(numberOfCustomers) customers at your stand")
         //createRandomTastePreference()
         currentEuro = currentEuro + earningsForTheDay(numberOfCustomers)
@@ -240,6 +242,27 @@ class ViewController: UIViewController {
         return randomNumberCustomers
     }
    
+    func randomWeather () {
+        var currentWeatherState = Int(arc4random_uniform(UInt32(2)))
+        println(currentWeatherState)
+        switch currentWeatherState {
+        case 0:
+            println("Cold Weather")
+            currentWeather.image = UIImage(named: "Cold.png")
+            numberOfCustomers = numberOfCustomers - 3
+        case 1:
+            println("Mild Weather")
+            currentWeather.image = UIImage(named: "Mild.png")
+        case 2:
+            println("Warm Weather")
+            currentWeather.image = UIImage(named: "Warm.png")
+            numberOfCustomers = numberOfCustomers * 2
+            
+        default:
+            println("Error")
+        }
+    }
+    
     //create a taste preference
     func createRandomTastePreference () -> Double {
         let randomTastePreference = (Double(arc4random_uniform(UInt32(10))) + 1.0) / 10
