@@ -63,6 +63,7 @@ class ViewController: UIViewController {
     @IBAction func purchaseLemonPlusButtonPressed(sender: AnyObject) {
         if currentEuro < 2 {
             println("Not enough budget")
+            showAlertWithText(header: "Not enough Budget", message: "Sell some products or Start Day")
             }
         else {
         ++purchaseLemons
@@ -87,6 +88,7 @@ class ViewController: UIViewController {
         }
         else {
             println("No lemon to sell")
+            showAlertWithText(header: "No more lemons on stock to sell", message: "Buy lemons or Start Day")
         }
         
     }
@@ -102,6 +104,8 @@ class ViewController: UIViewController {
         }
         else {
             println ("Not enough budget")
+            showAlertWithText(header: "Not enough Budget", message: "Sell some products or Start Day")
+            
         }
     }
     
@@ -119,6 +123,8 @@ class ViewController: UIViewController {
         }
         else {
             println("no more Ice Cubes")
+            showAlertWithText(header: "No more ice cubes on stock to sell", message: "Buy ice cubes or Start Day")
+            
         }
     }
     
@@ -135,6 +141,7 @@ class ViewController: UIViewController {
         }
         else {
             println("No more Lemons for mix. all used up.")
+            showAlertWithText(header: "No more lemons on stock to mix", message: "Buy lemons or Start Day")
         }
         
     }
@@ -152,6 +159,7 @@ class ViewController: UIViewController {
         
         else {
             println("You cannot use less lemons then 0 for one mix")
+             showAlertWithText(header: "A mix cannot contain less then 0 lemons", message: "Leave at 0 or increase with +")
         }
     }
     
@@ -168,6 +176,7 @@ class ViewController: UIViewController {
         
         else {
             println("You already used up all available Ice Cubes")
+            showAlertWithText(header: "No more ice cubes on stock to mix", message: "Buy ice cubes or Start Day")
         }
     }
     
@@ -184,6 +193,7 @@ class ViewController: UIViewController {
         
         else {
             println("You cannout use less then 0 for one mix")
+            showAlertWithText(header: "A mix cannot contain less then 0 ice cubes", message: "Leave at 0 or increase with +")
         }
     }
     
@@ -197,14 +207,15 @@ class ViewController: UIViewController {
         //createRandomTastePreference()
         currentEuro = currentEuro + earningsForTheDay(numberOfCustomers)
         currentEuroLabel.text = "\(currentEuro) €"
+        showAlertWithText(header: "Results", message: "Weather: XXX ; Lemonade Ratio: \(lemonadeRatio); Earnings: \(currentEuro) €; ")
         resetLabelforNewDay()
     }
 
     
     
-    ///////////
-    //This is the section for helpe functions
-    //////////
+    ////////////////////////////////////////////
+    //This is the section for helpe functions//
+    ///////////////////////////////////////////
     
     //reset labels for new day
     func resetLabelforNewDay () {
@@ -321,6 +332,12 @@ class ViewController: UIViewController {
     
     }
     
+    // function to show alert with messagetext when an error occures
+    func showAlertWithText (header : String = "Warning", message : String) {
+        var alert = UIAlertController (title: header, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
     
 }
 
